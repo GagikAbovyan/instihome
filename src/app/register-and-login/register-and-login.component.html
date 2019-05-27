@@ -1,0 +1,13 @@
+<div class="login-page">
+  <div class="form">
+    <form class="login-form">
+      <div class="cont-inputs">
+        <input #emailLogin type="text" placeholder="email address" (input)="onValidateEmail($event.target.value)"/>
+        <input #passLogin type="password" placeholder="password" (input)="onValidatePass($event.target.value)"/>
+        <span class="warning">{{this.warning}}</span>
+      </div>
+      <button type="button" id='btn-log-or-reg' (click)='loginOrReg()' [disabled]="!validate">{{this.action}}</button>
+      <p class="message">{{this.firstMessage}}<a id='create' (click)='changeText()'>{{this.secondMessage}}</a></p>
+    </form>
+  </div>
+</div>

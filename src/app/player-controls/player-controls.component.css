@@ -1,0 +1,53 @@
+/* class styles */
+
+.player-controls {
+  display:flex;
+  width:100%; 
+  height:100%; 
+  position: absolute; 
+  display: flex;  
+  align-items: center;
+}
+
+.player-controls > div {
+  flex:1 1 auto;
+  margin:2px;
+}
+
+.player-progress {
+  margin:30px 0 20px 0;
+  -webkit-appearance: none;
+  background-color: #f5f6f8;
+  height: 3px;
+  width: 80%;
+  margin: 10px auto;
+}
+
+.player-progress {
+  margin-right: 10px;
+}
+
+.player-progress:focus {
+  outline:none;
+}
+
+.player-progress::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 13px;
+  height: 13px;
+  background: #c1282d;
+  border-radius: 50%;
+  cursor: -moz-grab;
+  cursor: -webkit-grab; 
+}
+
+/* tag styles */
+
+i {
+  font-size:25px;
+  color: white
+}
+
+
+
+

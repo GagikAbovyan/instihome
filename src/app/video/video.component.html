@@ -1,0 +1,31 @@
+<div class="video-container">
+  <div height='600px' width='620px' class="canvas-container">
+    <div class="block visibility" id='load-div'>
+      <p class="circle">
+        <span class="ouro ouro3" id="load-span">
+          <span class="left"><span class="anim"></span></span>
+          <span class="right"><span class="anim"></span></span>
+        </span>
+      </p>
+    </div>
+    <app-player-controls class="player-comp"></app-player-controls>
+    <canvas #canvas id="canvas" height='599px' width='620px' (mousemove)="onMouseMove($event)"
+    (mouseup)="mouseUp($event)" (mousedown)="mouseDown($event)" crossOrigin="Anonymous">
+    <video id="video" crossorigin="anonymous" #video height="600px" width="650px" muted src={{API}}
+      on-play="readVideo()" controls></video>
+    </canvas>
+    
+  </div>
+  <div class="player-container" >
+    <button class="btn btn-req" id="upload-btn" (click)="file.click()"><i id="icon-upload" class="fa fa-upload"></i> Upload</button>
+    <button class="btn btn-req" id="track-btn"  (click)="sendData()"><i id="icon-track" class="fa fa-paper-plane"></i> Track</button>
+    <button class="btn btn-req" id="export-btn" (click)="exportData()"><i id="icon-export" class="fa fa-file"></i> Export</button>
+    <!-- <app-player-controls class="player-comp"></app-player-controls> -->
+  </div>
+  <!-- <canvas id='canvasOutput' #canvasOutput height="600px" width="600px" style="background:white; position: absolute"></canvas> -->
+
+  <div>
+    <input #file type="file" id="file" name="photo" (change)="detectFiles()" ng2FileSelect
+      [uploader]="uploader">
+  </div>
+</div>

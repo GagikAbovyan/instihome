@@ -1,0 +1,262 @@
+/* tags style ----------------- */
+
+h1 {
+  font-style: italic;
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+li {
+  list-style-type: none;
+}
+
+progress {
+  color: green;
+  font-size: 12px;
+  width: 150px;
+  height: 13px;
+  border: none;
+  margin-right: 10px;
+  background: #434343;
+  border-radius: 9px;
+  vertical-align: middle;
+}
+
+progress::-moz-progress-bar {
+  color: green;
+  background: #434343;
+}
+
+progress[value]::-webkit-progress-bar {
+  background-color: #434343;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+
+progress[value]::-webkit-progress-value {
+  background-color: green;
+}
+
+/* class style ----------------- */
+
+.annotation-container {
+  display: flex;
+  justify-content: center;
+
+  .tools-container {
+    min-height: 600px;
+    height: fit-content;
+    margin: 20px;
+    width: 400px;
+    border: 1px solid gainsboro;
+    background: white;
+
+    .tools-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px;
+      border-bottom: 1px solid gainsboro;
+      height: 65px;
+
+      .add-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+      }
+
+      .add-button:focus {
+        outline: none;
+      }
+
+      .add-button {
+        border: none;
+        background: none;
+        padding: 0px;
+        width: 40px;
+      }
+
+      input {
+        border: none;
+        width: calc(100% - 40px);
+      }
+
+      input:focus {
+        outline: none;
+        box-shadow: 0 0 0 0;
+      }
+
+      span {
+        font-size: 11px;
+        margin-right: auto;
+      }
+    }
+
+    .class-item-container-selected {
+      background: rgba(0, 0, 0, 0.03);
+    }
+
+    .class-item-container:hover {
+      background: rgba(0, 0, 0, 0.01);
+    }
+
+    .class-item-container-selected,
+    .class-item-container {
+      display: flex;
+      height: 48.5px;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 15px;
+      padding-right: 15px;
+      border-bottom: 1px solid gainsboro;
+
+      .class-item {
+        background: none;
+        border: none;
+        height: 100%;
+        color: rgb(196, 137, 1);
+        display: flex;
+        align-items: center;
+        width: calc(100% - 25px);
+      }
+
+      .close-container {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: red;
+        cursor: pointer;
+
+        i {
+          font-size: 13px;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+.main-container {
+
+  background: rgba(0, 0, 0, 0.01);
+  min-height: 100%;
+  background-color: #343F51;
+
+  .title-container {
+    padding-top: 100px;
+
+    h1 {
+      text-align: center;
+      font-style: normal;
+      color: white;
+      font-weight: bold;
+    }
+  }
+}
+
+.pause {
+  background-position: -19px 0;
+}
+
+.player {
+  height: 30px;
+  margin-top: 3px;
+}
+
+.replay {
+  background-position: -133px 0;
+}
+
+.text-white {
+  color: white;
+}
+
+
+/* id styles ----------------- */
+
+#add-class {
+  cursor: pointer;
+  color:#2AA9E0;
+}
+
+#controls {
+  margin-top: 5px;
+  padding-bottom: 3px;
+  border-radius: 7px; 
+  border: 1px solid darkgreen;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#icon {
+  color: black;
+}
+
+#load-area {
+  margin-top: 30px;
+}
+
+#load-text {
+  margin-top: 10px;
+  margin-left: -30px;
+  font-size: 20px;
+}
+
+#play {
+  cursor: pointer;
+}
+
+#progress-bar {
+  width: 80px;
+  margin-bottom: 5px;
+}
+
+#stop {
+  cursor: pointer;
+}
+
+#text-load {
+  margin-left: 50px;  
+  color: white;
+}
+
+// media styles
+
+@media (max-height: 900px) {
+  .tools-container {
+    min-height: 440px !important;
+    width: 400px !important;
+  }
+}
+
+@media (max-width: 1440px) {
+  .tools-container {
+    min-height: 440px !important;
+    width: 400px !important;
+  }
+}
+
+@media (max-height: 600px) {
+  .tools-container {
+    min-height: 350px !important;
+    width: 259px !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .tools-container {
+    min-height: 350px !important;
+    width: 259px !important;
+  }
+}

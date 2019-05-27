@@ -1,0 +1,53 @@
+print('cap before init')
+	cap = cv2.VideoCapture(STATIC_DIR + users[userKey]['videoName'])
+	fps = FPS().start()
+	success, frame = cap.read()
+	height, width, channels = frame.shape 
+	print(height, width)
+	trackers = []
+	print('cap after init')
+	# frame = rotateImage(frame, 270)
+	if not success:
+		print('Failed to read video')
+		sys.exit(1)
+	print('before loop', bboxes)
+	while True:
+		trackerType = 'KCF'
+		# multiTracker = cv2.MultiTracker_create()
+		print('tr after init')
+		print(bboxes)
+		# Initialize MultiTracker 
+		print('---------', bboxes)
+		for i in range(len(bboxes)):
+			# print('=============')
+			print('bbox', bboxes)
+			trackers.append(createTrackerByName(trackerType))
+			print('tr add')
+		for i in range(len(trackers)):
+			print('trackers loop')
+			trackers[i].init(frame, bboxes[i])
+		while cap.isOpened():
+			# print('cap op')
+			cv2.waitKey(10)
+			fps.update()
+			success, frame = cap.read()
+			# frame = rotateImage(frame, 270)
+			if not success:
+				print('succsess False ------->')
+				break	
+			for i in range(len(trackers)):
+				print('tr before update')
+				success, box = trackers[i].update(frame)
+				print(success)
+				p1 = (int(box[0]), int(box[1]))
+				p2 = (int(box[0] + box[2]), int(box[1] + box[3]))
+				cv2.rectangle(frame, p1, p2, 123, 2, 1)
+				# for i, newbox in enumerate(boxes):
+				# 	# print('for newboxes')
+				# 	p1 = (int(newbox[0]), int(newbox[1]))
+				# 	p2 = (int(newbox[0] + newbox[2]), int(newbox[1] + newbox[3]))
+				# 	cv2.rectangle(frame, p1, p2, 123, 2, 1)
+				# 	# print('p1,p2----------', p1, p2)
+				# 	print(height, width)
+			cv2.imshow('MultiTracker', frame)
+	print(STATIC_DIR + users[userKey]['videoName'])

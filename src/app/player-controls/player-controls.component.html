@@ -1,0 +1,10 @@
+
+<div class="player-controls">
+  <div><i class="fa fa-play-circle" (click)='play()' id='play'></i></div>
+  <div><i class="fa fa-stop-circle" (click)='stop()'></i></div>
+  <div>
+    <span id='time-video'>00:00:00</span>
+  </div>
+  <input class="player-progress" id="rng" name="rng" value="30" type="range" max="100" min="1" value="100" step="1" (input)="valueChanged($event.target.value)"/> 
+</div>
+

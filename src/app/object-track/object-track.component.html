@@ -1,0 +1,29 @@
+<div class="container-fluid main-container">
+  <div (click)="unSetClass()" class="container title-container">
+    <h1 class="header">OBJECT TRACKING</h1>
+  </div>
+  <div (click)="checkEvent($event)" class="annotation-container">
+    <app-video></app-video>
+    <div  class="tools-container">
+      <div class="tools-header">
+        <div class="add-container">
+          <input #className type="text" class="input-class" maxlength="20" placeholder="Class Name"
+            (input)="onSearchChange($event.target.value)" (keydown)="onKeydown($event)" aria-label="Username"
+            aria-describedby="basic-addon1" />
+          <button type="submit" class="add-button" (click)="addClass(); className.value = ''">
+            <strong id="add-class">+Add</strong>
+          </button>
+        </div>
+        <span class="text-danger">{{this.warning}}</span>
+      </div>
+      <li *ngFor="let clazz of classes" class="class-item-container">
+        <div class="class-buttons class-item" [ngStyle]="{
+            'color': clazz.color
+            }" [id]="clazz.name" (click)="setClasses(clazz)">{{clazz.name}}</div>
+        <div class="close-container" (click)="popClass(clazz)">
+          <i class="fa fa-times" ></i>
+        </div>
+      </li>
+    </div>
+  </div>
+</div>

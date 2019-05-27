@@ -1,0 +1,36 @@
+{
+  "name": "ng-open-cv",
+  "author": "Abou Kone",
+  "version": "0.2.1",
+  "description": "Angular 6+ library integration for OpenCV.js",
+  "keywords": [
+    "Angular",
+    "OpenCV",
+    "Library",
+    "OpenCVJS",
+    "Face Detection"
+  ],
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/devakone/ng-open-cv-lib"
+  },
+  "homepage": "https://medium.com/code-divoire/integrating-opencv-js-with-an-angular-application-20ae11c7e217",
+  "peerDependencies": {
+    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/core": "^6.1.8"
+  },
+  "main": "bundles/ng-open-cv.umd.js",
+  "module": "fesm5/ng-open-cv.js",
+  "es2015": "fesm2015/ng-open-cv.js",
+  "esm5": "esm5/ng-open-cv.js",
+  "esm2015": "esm2015/ng-open-cv.js",
+  "fesm5": "fesm5/ng-open-cv.js",
+  "fesm2015": "fesm2015/ng-open-cv.js",
+  "typings": "ng-open-cv.d.ts",
+  "metadata": "ng-open-cv.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}
