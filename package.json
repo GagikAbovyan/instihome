@@ -41,7 +41,7 @@
     "rxjs-compat": "^6.4.0",
     "socket.io-client": "^2.2.0",
     "tslib": "^1.9.0",
-    "uploader": "0.0.3-3",
+    "uploader": "2.1.0",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
