@@ -26,7 +26,7 @@
     "boostrap": "^2.0.0",
     "core-js": "^2.5.4",
     "cors": "^2.8.5",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "file-upload": "0.0.0",
     "file-uploader": "^1.0.0",
     "fileupload": "^1.0.0",
